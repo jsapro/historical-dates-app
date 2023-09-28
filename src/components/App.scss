@@ -22,8 +22,8 @@ body {
   padding: 0;
 }
 
-.container{
-margin: 100px 50px;
+.container {
+  margin: 100px 50px;
 }
 
 .swiper {
@@ -53,9 +53,11 @@ margin: 100px 50px;
   min-height: 300px;
   color: rgb(30, 219, 71);
   border: 1px solid red;
+  background: transparent;
 }
 .SwiperSlide {
   min-height: 200px;
-  background-color: #371355;
   border: 1px solid rgb(60, 255, 0);
+  // background-color: #371355;
+  background: transparent;
 }

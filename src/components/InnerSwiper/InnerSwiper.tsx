@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import SwiperCore, { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
+import './InnerSwiper.scss';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -25,6 +26,9 @@ const InnerSwiper = ({ events }) => {
     <>
       <Swiper
         onSlideChange={handleSlideChange}
+        slidesPerView={4}
+        spaceBetween={40}
+        grabCursor={true}
         ref={swiperRef}
         navigation={true}
         pagination
@@ -32,12 +36,13 @@ const InnerSwiper = ({ events }) => {
       >
         {events.map((event, index) => (
           <>
-            <SwiperSlide key={index}>{event.description}</SwiperSlide>
-            <p>event.year</p>
+            <SwiperSlide className="SwiperSlide" key={event.id ? event.id : index}>
+              <p>{event.year}</p>
+              <p>{event.description}</p>
+            </SwiperSlide>
           </>
         ))}
       </Swiper>
-      <p>{slideNumber}</p>
     </>
   );
 };
