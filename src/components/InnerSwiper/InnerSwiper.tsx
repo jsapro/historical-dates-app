@@ -1,23 +1,44 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import SwiperCore, { Navigation, Pagination } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-// Install Swiper modules
 // SwiperCore.use([Navigation, Pagination]);
 
-const InnerSwiper = () => {
+const InnerSwiper = ({ events }) => {
+  const swiperRef = useRef<SwiperRef>(null);
+  const [slideNumber, setSlideNumber] = useState(1);
+
+  const handleSlideChange = () => {
+    if (swiperRef.current) {
+      const activeIndex = swiperRef.current.swiper.activeIndex;
+      console.log('Active Slide Index in InnerSwiper:', activeIndex);
+      setSlideNumber(activeIndex);
+    }
+  };
+
   return (
-    <Swiper navigation={true} pagination modules={[Navigation]}>
-      <SwiperSlide>Slide 1</SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      {/* Add more slides as needed */}
-    </Swiper>
+    <>
+      <Swiper
+        onSlideChange={handleSlideChange}
+        ref={swiperRef}
+        navigation={true}
+        pagination
+        modules={[Navigation]}
+      >
+        {events.map((event, index) => (
+          <>
+            <SwiperSlide key={index}>{event.description}</SwiperSlide>
+            <p>event.year</p>
+          </>
+        ))}
+      </Swiper>
+      <p>{slideNumber}</p>
+    </>
   );
 };
 
