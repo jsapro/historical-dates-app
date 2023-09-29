@@ -4,31 +4,34 @@
 //   background-color: $main-color;
 // }
 
-#app {
-  height: 100%;
-}
-html,
-body {
-  position: relative;
-  height: 100%;
-}
+// html,
+// body {
+//   position: relative;
+//   height: 100%;
+// }
 
-body {
-  background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  padding: 0;
-}
+// body {
+//   // background: #eee;
+//   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+//   font-size: 14px;
+//   color: #000;
+//   margin: 0;
+//   // padding: 50px;
+// }
 
 .container {
-  margin: 100px 50px;
+  position: relative;
+  box-sizing: border-box;
+  max-width: 1440px;
+  width: 100%;
+  margin: auto;
+  padding: 0 80px;
 }
 
 .swiper {
   width: 100%;
   height: 100%;
+  // max-width: 1000px;
 }
 
 .swiper-slide {
@@ -42,72 +45,85 @@ body {
   align-items: center;
 }
 
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+// .swiper-slide img {
+//   display: block;
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+// }
 
 .mySwiper {
   min-height: 300px;
   color: rgb(30, 219, 71);
-  border: 1px solid red;
+  // border: 1px solid red;
   background: transparent;
 }
 .SwiperSlide {
   min-height: 200px;
-  border: 1px solid rgb(60, 255, 0);
+  // border: 1px solid rgb(60, 255, 0);
   // background-color: #371355;
   background: transparent;
 }
 
-.div {
-  width: 400px;
-  height: 400px;
+.circle {
+  // width: 1200px;
+  // height: 800px;
+
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
-  position: relative;
+  // position: relative;
+  top: 0;
+  position: absolute;
+  border: 1px solid var(--Black-blue, #42567a);
+  border-bottom: none;
+  border-top: none;
+  // opacity: 0.2;
+  z-index: -1;
 }
 
-.div::before,
-.div::after {
+// .circle::before,
+.circle::after {
   content: '';
   display: block;
-  width: 2px;
-  height: 100%;
+  // width: 2px;
+  height: 74vh;
   position: absolute;
-  top: 0;
+  top: -94px;
   left: 50%;
-  background-color: red;
+  // background-color: red;
+  border: 1px solid var(--Black-blue, #42567a);
+  opacity: 0.2;
 }
 
-.div::before {
-  transform: rotate(90deg);
-}
-
-.span {
+// .circle::before {
+//   transform: rotate(90deg);
+//   height: 100%;
+// }
+.circle::before {
+  content: '';
+  display: block;
+  // width: 2px;
+  height: 1442px;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.span_1 {
-  left: 10%;
-}
-
-.span_2 {
-  right: 10%;
+  top: -241px;
+  left: 50%;
+  // background-color: red;
+  transform: rotate(90deg);
+  border: 1px solid var(--Black-blue, #42567a);
+  opacity: 0.2;
 }
 
 .wrapper {
-  width: 300px;
-  height: 300px;
-  border: 3px solid red;
+  width: 530px;
+  height: 530px;
   border-radius: 50%;
   position: relative;
+  margin-bottom: 190px;
+  border: 1px solid var(--Black-blue, #42567a);
+  opacity: 0.5;
 }
 
 .point {
@@ -126,6 +142,7 @@ body {
   top: 25px;
   right: 25px;
   border: 3px solid rgb(255, 115, 0);
+  opacity: 1;
 }
 
 .point_2 {
@@ -156,4 +173,56 @@ body {
   top: 145px;
   right: -15px;
   border: 3px solid rgb(212, 0, 255);
+}
+
+.info {
+  display: flex;
+  gap: 700px;
+  align-items: center;
+  // justify-content: space-between;
+  padding: 165px 0 90px 0;
+}
+.info__title {
+  color: var(--Black-blue, #42567a);
+  font-family: PT Sans;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 120%;
+  margin: 0;
+  width: 100px;
+  padding: 0 0 0 108px;
+}
+
+.info__event-type {
+  margin: 0;
+  color: var(--Black-blue, #42567a);
+  font-family: PT Sans;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.span {
+  // position: absolute;
+  // top: 50%;
+  // transform: translateY(-50%);
+  text-align: center;
+  font-family: PT Sans;
+  font-size: 200px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 160px; /* 80% */
+  letter-spacing: -4px;
+}
+
+.span_1 {
+  // left: 10%;
+  color: var(--iris-100, #5d5fef);
+  padding-left: 260px;
+}
+
+.span_2 {
+  // right: 10%;
+  color: var(--fuschia-100, #ef5da8);
+  padding-left: 144px;
 }

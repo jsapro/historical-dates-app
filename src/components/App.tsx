@@ -1,13 +1,10 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { Swiper, SwiperRef, SwiperSlide, useSwiper } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 import InnerSwiper from './InnerSwiper/InnerSwiper';
-// import Swiper core and required modules
 import { SwiperNavButtons } from './SwiperNavButton/SwiperNavButton';
 import { historicalDates } from '../utils/constants.js';
-import { useSwiperSlide } from 'swiper/react';
 import './App.scss';
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -20,13 +17,8 @@ const App = ({ message }: AppProps) => {
   const swiperContainerRef = useRef(null);
   const [slideNumber, setSlideNumber] = useState(0);
   const [fraction, setFraction] = useState(`1/${historicalDates.length}`);
-  // const [mainSlide, setMainSlide] = useState(0);
-
-  const swiperSlide = useSwiperSlide();
 
   const swiperRef = useRef<SwiperRef>(null);
-
-  // console.log(swiperRef.current);
 
   const swiper = useSwiper();
 
@@ -40,13 +32,10 @@ const App = ({ message }: AppProps) => {
       console.log('Slide Name:', historicalDates[activeIndex].name);
 
       const slideData = swiperRef.current.swiper.slides[activeIndex].textContent;
-      // console.log('Slide Data:', slideData);
 
       setFraction(`${activeIndex + 1}/${historicalDates.length}`);
 
       const swiperInstance = swiperRef.current.swiper;
-      //swiperInstance.slideTo(0, initialSlide); // change 2 to the desired initial slide index
-      // swiperInstance.update();
       handleCircleClick(activeIndex);
     }
   };
@@ -62,15 +51,8 @@ const App = ({ message }: AppProps) => {
   // };
 
   const wrapperRef = useRef(null);
-  // const [deg, setDeg] = useState(0);
 
   const handleCircleClick = (number) => {
-    // swiper.onChangeIndex(number)
-    // setMainSlide(number);
-    console.log('number', number);
-    // console.log('deg', deg);
-    // console.log('mainSlide', mainSlide);
-
     const rotate = (deg) => {
       if (wrapperRef.current) {
         (wrapperRef.current as HTMLElement).style.transition = '1s transform';
@@ -99,11 +81,8 @@ const App = ({ message }: AppProps) => {
         break;
     }
 
-    // setDeg(deg + 45);
-
     if (swiperRef.current) {
       const swiperInstance = swiperRef.current.swiper;
-      //swiperInstance.slideTo(0, initialSlide); // change 2 to the desired initial slide index
       swiperInstance.slideTo(number);
     }
   };
@@ -120,10 +99,7 @@ const App = ({ message }: AppProps) => {
 
   return (
     <div ref={swiperContainerRef} className="container">
-      <div className="div">
-        <span className="span span_1">{findYearInterval().minYear}</span>
-        <span className="span span_2">{findYearInterval().maxYear}</span>
-
+      <div className="circle">
         <div ref={wrapperRef} className="wrapper">
           <div onClick={() => handleCircleClick(0)} className="point point_1"></div>
           <div onClick={() => handleCircleClick(1)} className="point point_2"></div>
@@ -133,12 +109,16 @@ const App = ({ message }: AppProps) => {
           <div onClick={() => handleCircleClick(5)} className="point point_6"></div>
         </div>
       </div>
-      <p>{historicalDates[slideNumber].name}</p>
-      <SwiperNavButtons></SwiperNavButtons>
-      <p>{fraction}</p>
+      <div className="info">
+        <h1 className="info__title">Исторические даты</h1>
+        <p className="info__event-type">{historicalDates[slideNumber].name}</p>
+      </div>
+      <span className="span span_1">{findYearInterval().minYear}</span>
+      <span className="span span_2">{findYearInterval().maxYear}</span>
+
+      <SwiperNavButtons fraction={fraction}></SwiperNavButtons>
 
       <Swiper
-        // initialSlide={initialSlide}
         // onSwiper={setSwiper}
         onSlideChange={handleSlideChange}
         ref={swiperRef}
@@ -149,14 +129,9 @@ const App = ({ message }: AppProps) => {
           nextEl: '.review-swiper-button-next',
           prevEl: '.review-swiper-button-prev',
         }}
-        // navigation={true}
         modules={[Pagination, Navigation]}
         className="mySwiper"
-        // shouldSwiperUpdate={true}
-        // observer={true}
-        // shouldSwiperUpdate
       >
-        {/* <h1>{message}</h1> */}
         {historicalDates.map((date, index) => (
           <>
             <SwiperSlide key={date.id ? date.id : index} className="SwiperSlide">
