@@ -25,7 +25,7 @@
   min-height: 300px;
   // border: 1px solid red;
   background-color: transparent;
-  padding-left: 80px;
+  margin-left: 80px;
 }
 
 .swiper-slide {
@@ -57,7 +57,7 @@
   content: '';
   display: block;
   // width: 2px;
-  height: 100vh;
+  height: 110vh;
   position: absolute;
   top: -94px;
   left: 50%;
@@ -157,6 +157,11 @@
   margin: 0;
   width: 100px;
   padding: 0 0 0 108px;
+  border-left: 7px solid transparent;
+  border-image: linear-gradient(#3877EE, #EF5DA8);
+  -moz-border-image: -moz-linear-gradient(#3877EE, #EF5DA8);
+  -webkit-border-image: -webkit-linear-gradient(#3877EE, #EF5DA8);
+  border-image-slice: 1;
 }
 
 .info__event-type {
