@@ -65,19 +65,19 @@ const App = ({ message }: AppProps) => {
         rotate(0);
         break;
       case 1:
-        rotate(80);
+        rotate(58);
         break;
       case 2:
-        rotate(-100);
+        rotate(-122);
         break;
       case 3:
-        rotate(170);
+        rotate(180);
         break;
       case 4:
-        rotate(125);
+        rotate(120);
         break;
       case 5:
-        rotate(-45);
+        rotate(-62);
         break;
     }
 
