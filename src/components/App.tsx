@@ -20,7 +20,7 @@ const App = ({ message }: AppProps) => {
   const swiperContainerRef = useRef(null);
   const [slideNumber, setSlideNumber] = useState(0);
   const [fraction, setFraction] = useState(`1/${historicalDates.length}`);
-  const [mainSlide, setMainSlide] = useState(0);
+  // const [mainSlide, setMainSlide] = useState(0);
 
   const swiperSlide = useSwiperSlide();
 
@@ -47,7 +47,7 @@ const App = ({ message }: AppProps) => {
       const swiperInstance = swiperRef.current.swiper;
       //swiperInstance.slideTo(0, initialSlide); // change 2 to the desired initial slide index
       // swiperInstance.update();
-      fn(activeIndex)
+      handleCircleClick(activeIndex);
     }
   };
 
@@ -62,24 +62,49 @@ const App = ({ message }: AppProps) => {
   // };
 
   const wrapperRef = useRef(null);
-  const [deg, setDeg] = useState(5);
+  // const [deg, setDeg] = useState(0);
 
-  const fn = (number) => {
+  const handleCircleClick = (number) => {
     // swiper.onChangeIndex(number)
-    setMainSlide(number);
+    // setMainSlide(number);
     console.log('number', number);
-    console.log('mainSlide', mainSlide);
+    // console.log('deg', deg);
+    // console.log('mainSlide', mainSlide);
 
-    setDeg(deg + 45);
-    if (wrapperRef.current) {
-      (wrapperRef.current as HTMLElement).style.transition = '1s transform';
-      (wrapperRef.current as HTMLElement).style.transform = `rotate(${deg}deg)`;
+    const rotate = (deg) => {
+      if (wrapperRef.current) {
+        (wrapperRef.current as HTMLElement).style.transition = '1s transform';
+        (wrapperRef.current as HTMLElement).style.transform = `rotate(${deg}deg)`;
+      }
+    };
+
+    switch (number) {
+      case 0:
+        rotate(0);
+        break;
+      case 1:
+        rotate(80);
+        break;
+      case 2:
+        rotate(-100);
+        break;
+      case 3:
+        rotate(170);
+        break;
+      case 4:
+        rotate(125);
+        break;
+      case 5:
+        rotate(-45);
+        break;
     }
+
+    // setDeg(deg + 45);
 
     if (swiperRef.current) {
       const swiperInstance = swiperRef.current.swiper;
       //swiperInstance.slideTo(0, initialSlide); // change 2 to the desired initial slide index
-      swiperInstance.slideTo(number)
+      swiperInstance.slideTo(number);
     }
   };
 
@@ -90,12 +115,12 @@ const App = ({ message }: AppProps) => {
         <span className="span span_2">1300</span>
 
         <div ref={wrapperRef} className="wrapper">
-          <div onClick={() => fn(4)} className="point point_1"></div>
-          <div onClick={() => fn(5)} className="point point_2"></div>
-          <div className="point point_3"></div>
-          <div className="point point_4"></div>
-          <div className="point point_5"></div>
-          <div className="point point_6"></div>
+          <div onClick={() => handleCircleClick(0)} className="point point_1"></div>
+          <div onClick={() => handleCircleClick(1)} className="point point_2"></div>
+          <div onClick={() => handleCircleClick(2)} className="point point_3"></div>
+          <div onClick={() => handleCircleClick(3)} className="point point_4"></div>
+          <div onClick={() => handleCircleClick(4)} className="point point_5"></div>
+          <div onClick={() => handleCircleClick(5)} className="point point_6"></div>
         </div>
       </div>
       <p>{historicalDates[slideNumber].name}</p>
