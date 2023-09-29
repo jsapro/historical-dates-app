@@ -108,11 +108,21 @@ const App = ({ message }: AppProps) => {
     }
   };
 
+  const findYearInterval = () => {
+    const events = historicalDates[slideNumber].events;
+    const years = events.map((element) => {
+      return element.year;
+    });
+    const minYear = Math.min(...years);
+    const maxYear = Math.max(...years);
+    return { minYear, maxYear };
+  };
+
   return (
     <div ref={swiperContainerRef} className="container">
       <div className="div">
-        <span className="span span_1">1200</span>
-        <span className="span span_2">1300</span>
+        <span className="span span_1">{findYearInterval().minYear}</span>
+        <span className="span span_2">{findYearInterval().maxYear}</span>
 
         <div ref={wrapperRef} className="wrapper">
           <div onClick={() => handleCircleClick(0)} className="point point_1"></div>

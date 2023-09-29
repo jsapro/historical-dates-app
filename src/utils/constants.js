@@ -4,7 +4,7 @@ const historicalDates = [
     name: 'Наука',
     events: [
       {
-        year: 2015,
+        year: 2001,
         description: 'Наука-1  13 сентября - частое солнечное затмение...',
       },
       {
@@ -24,7 +24,7 @@ const historicalDates = [
         description: 'Наука-5  13 сентября - частое солнечное затмение...',
       },
       {
-        year: 2020,
+        year: 2021,
         description: 'Наука-6  13 сентября - частое солнечное затмение...',
       },
     ],
@@ -34,7 +34,7 @@ const historicalDates = [
     name: 'Литература',
     events: [
       {
-        year: 2015,
+        year: 2002,
         description: 'Литература-1  13 сентября - частое солнечное затмение...',
       },
       {
@@ -54,7 +54,7 @@ const historicalDates = [
         description: 'Литература-5  13 сентября - частое солнечное затмение...',
       },
       {
-        year: 2020,
+        year: 2022,
         description: 'Литература-6  13 сентября - частое солнечное затмение...',
       },
     ],
@@ -64,7 +64,7 @@ const historicalDates = [
     name: 'Кино',
     events: [
       {
-        year: 2015,
+        year: 2003,
         description: '13 сентября - частое солнечное затмение...',
       },
       {
@@ -84,7 +84,7 @@ const historicalDates = [
         description: '13 сентября - частое солнечное затмение...',
       },
       {
-        year: 2020,
+        year: 2023,
         description: '13 сентября - частое солнечное затмение...',
       },
     ],
@@ -94,7 +94,7 @@ const historicalDates = [
     name: 'Технологии',
     events: [
       {
-        year: 2015,
+        year: 2004,
         description: '13 сентября - частое солнечное затмение...',
       },
       {
@@ -114,7 +114,7 @@ const historicalDates = [
         description: '13 сентября - частое солнечное затмение...',
       },
       {
-        year: 2020,
+        year: 2024,
         description: '13 сентября - частое солнечное затмение...',
       },
     ],
@@ -124,7 +124,7 @@ const historicalDates = [
     name: 'Спорт',
     events: [
       {
-        year: 2015,
+        year: 2005,
         description: '13 сентября - частое солнечное затмение...',
       },
       {
@@ -144,7 +144,7 @@ const historicalDates = [
         description: '13 сентября - частое солнечное затмение...',
       },
       {
-        year: 2020,
+        year: 2025,
         description: '13 сентября - частое солнечное затмение...',
       },
     ],
@@ -154,7 +154,7 @@ const historicalDates = [
     name: 'Искусство',
     events: [
       {
-        year: 2015,
+        year: 2006,
         description: 'Искусство-1  13 сентября - частое солнечное затмение...',
       },
       {
@@ -174,7 +174,7 @@ const historicalDates = [
         description: 'Искусство-5  13 сентября - частое солнечное затмение...',
       },
       {
-        year: 2020,
+        year: 2026,
         description: 'Искусство-6  13 сентября - частое солнечное затмение...',
       },
     ],
