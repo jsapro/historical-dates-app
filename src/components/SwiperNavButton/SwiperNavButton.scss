@@ -1,6 +1,6 @@
 .navigation {
   padding: 145px 0 50px 110px;
-  z-index: 10;
+  background-color: transparent;
 }
 
 .navigation__info {
@@ -16,15 +16,22 @@
   width: 50px;
   height: 50px;
   flex-shrink: 0;
-  background: transparent;
+  background-color: transparent;
   border: none;
   margin-top: 20px;
+  z-index: 10;
+  position: relative;
 }
 
 .navigation__btn_type_left {
-    background-image: url('../../assets/images/arrow-left.svg');
+  background-image: url('../../assets/images/arrow-left.svg');
 }
 .navigation__btn_type_right {
-    background-image: url('../../assets/images/arrow-right.svg');
-    margin-left: 20px;
+  background-image: url('../../assets/images/arrow-left.svg');
+  transform: rotate(180deg);
+  margin-left: 20px;
+}
+
+.swiper-button-disabled {
+  opacity: 0.5;
 }

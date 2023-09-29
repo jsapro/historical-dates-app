@@ -35,12 +35,10 @@ const InnerSwiper = ({ events }) => {
         modules={[Navigation]}
       >
         {events.map((event, index) => (
-          <>
-            <SwiperSlide className="SwiperSlide" key={event.id ? event.id : index}>
-              <p>{event.year}</p>
-              <p>{event.description}</p>
-            </SwiperSlide>
-          </>
+          <SwiperSlide className="swiper-slide" key={event.id ? event.id : index}>
+            <p className="swiper-slide__year">{event.year}</p>
+            <p className="swiper-slide__description">{event.description}</p>
+          </SwiperSlide>
         ))}
       </Swiper>
     </>

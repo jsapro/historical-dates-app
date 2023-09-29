@@ -130,14 +130,12 @@ const App = ({ message }: AppProps) => {
           prevEl: '.review-swiper-button-prev',
         }}
         modules={[Pagination, Navigation]}
-        className="mySwiper"
+        className="outer-swiper"
       >
         {historicalDates.map((date, index) => (
-          <>
-            <SwiperSlide key={date.id ? date.id : index} className="SwiperSlide">
-              <InnerSwiper events={date.events}></InnerSwiper>
-            </SwiperSlide>
-          </>
+          <SwiperSlide key={date.id ? date.id : index} className="swiper-slide">
+            <InnerSwiper events={date.events}></InnerSwiper>
+          </SwiperSlide>
         ))}
       </Swiper>
     </div>
