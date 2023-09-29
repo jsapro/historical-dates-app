@@ -61,3 +61,84 @@ body {
   // background-color: #371355;
   background: transparent;
 }
+
+.div {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+  position: relative;
+}
+
+.div::before,
+.div::after {
+  content: '';
+  display: block;
+  width: 2px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  background-color: red;
+}
+
+.div::before {
+  transform: rotate(90deg);
+}
+
+.span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.span_1 {
+  left: 10%;
+}
+
+.span_2 {
+  right: 10%;
+}
+
+.wrapper {
+  width: 300px;
+  height: 300px;
+  border: 3px solid red;
+  border-radius: 50%;
+  position: relative;
+}
+
+.point {
+  width: 10px;
+  height: 10px;
+  border: 3px solid red;
+  border-radius: 50%;
+  position: absolute;
+  transition: 1s transform;
+}
+
+.point:hover {
+  transform: scale(1.5);
+}
+
+.point_1 {
+  top: 25px;
+  left: 25px;
+}
+
+.point_2 {
+  top: 25px;
+  right: 25px;
+}
+
+.point_3 {
+  bottom: 25px;
+  right: 25px;
+}
+
+.point_4 {
+  bottom: 25px;
+  left: 25px;
+}

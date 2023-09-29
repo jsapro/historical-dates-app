@@ -20,6 +20,7 @@ const App = ({ message }: AppProps) => {
   const swiperContainerRef = useRef(null);
   const [slideNumber, setSlideNumber] = useState(0);
   const [fraction, setFraction] = useState(`1/${historicalDates.length}`);
+  const [mainSlide, setMainSlide] = useState(0);
 
   const swiperSlide = useSwiperSlide();
 
@@ -39,9 +40,14 @@ const App = ({ message }: AppProps) => {
       console.log('Slide Name:', historicalDates[activeIndex].name);
 
       const slideData = swiperRef.current.swiper.slides[activeIndex].textContent;
-      console.log('Slide Data:', slideData);
+      // console.log('Slide Data:', slideData);
 
       setFraction(`${activeIndex + 1}/${historicalDates.length}`);
+
+      const swiperInstance = swiperRef.current.swiper;
+      //swiperInstance.slideTo(0, initialSlide); // change 2 to the desired initial slide index
+      // swiperInstance.update();
+      fn(activeIndex)
     }
   };
 
@@ -51,20 +57,54 @@ const App = ({ message }: AppProps) => {
     }
   };
 
-  const setSwiper = (swiper) => {
-    // Access and use the Swiper instance
-    console.log('Swiper Instance:', swiper);
+  // const setSwiper = (swiper) => {
+  //   console.log('Swiper Instance:', swiper);
+  // };
+
+  const wrapperRef = useRef(null);
+  const [deg, setDeg] = useState(5);
+
+  const fn = (number) => {
+    // swiper.onChangeIndex(number)
+    setMainSlide(number);
+    console.log('number', number);
+    console.log('mainSlide', mainSlide);
+
+    setDeg(deg + 45);
+    if (wrapperRef.current) {
+      (wrapperRef.current as HTMLElement).style.transition = '1s transform';
+      (wrapperRef.current as HTMLElement).style.transform = `rotate(${deg}deg)`;
+    }
+
+    if (swiperRef.current) {
+      const swiperInstance = swiperRef.current.swiper;
+      //swiperInstance.slideTo(0, initialSlide); // change 2 to the desired initial slide index
+      swiperInstance.slideTo(number)
+    }
   };
 
   return (
     <div ref={swiperContainerRef} className="container">
+      <div className="div">
+        <span className="span span_1">1200</span>
+        <span className="span span_2">1300</span>
+
+        <div ref={wrapperRef} className="wrapper">
+          <div onClick={() => fn(4)} className="point point_1"></div>
+          <div onClick={() => fn(5)} className="point point_2"></div>
+          <div className="point point_3"></div>
+          <div className="point point_4"></div>
+          <div className="point point_5"></div>
+          <div className="point point_6"></div>
+        </div>
+      </div>
       <p>{historicalDates[slideNumber].name}</p>
       <SwiperNavButtons></SwiperNavButtons>
       <p>{fraction}</p>
 
       <Swiper
-        initialSlide={0}
-        onSwiper={setSwiper}
+        // initialSlide={initialSlide}
+        // onSwiper={setSwiper}
         onSlideChange={handleSlideChange}
         ref={swiperRef}
         // pagination={{
@@ -77,6 +117,9 @@ const App = ({ message }: AppProps) => {
         // navigation={true}
         modules={[Pagination, Navigation]}
         className="mySwiper"
+        // shouldSwiperUpdate={true}
+        // observer={true}
+        // shouldSwiperUpdate
       >
         {/* <h1>{message}</h1> */}
         {historicalDates.map((date, index) => (
