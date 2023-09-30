@@ -97,7 +97,7 @@
   height: 6px;
   border-radius: 50%;
   position: absolute;
-  transition: 2s transform;
+  transition: 0.5s transform;
   // background-color: #42567A;
   // border: 1px solid var(--Black-blue, #42567A);
 }
@@ -150,7 +150,7 @@
 }
 .info__title {
   color: var(--Black-blue, #42567a);
-  font-family: PT Sans;
+  font-family: 'PT Sans', sans-serif;
   font-size: 56px;
   font-weight: 700;
   line-height: 120%;
@@ -167,7 +167,7 @@
 .info__event-type {
   margin: 0;
   color: var(--Black-blue, #42567a);
-  font-family: PT Sans;
+  font-family: 'PT Sans', sans-serif;
   font-size: 20px;
   font-weight: 700;
   line-height: 30px;
@@ -175,7 +175,7 @@
 
 .span {
   text-align: center;
-  font-family: PT Sans;
+  font-family: 'PT Sans', sans-serif;
   font-size: 200px;
   font-style: normal;
   font-weight: 700;

@@ -1,8 +1,11 @@
+@import url('./vendor/fonts/fonts.scss');
+@import url('./vendor/normalize.scss');
+
 $main-color: rgb(244, 245, 249);
 
 body {
   background-color: $main-color;
   margin: 0;
-  max-height: 100vh;
-  overflow: hidden;
+  // max-height: 100vh;
+  // overflow: hidden;
 }

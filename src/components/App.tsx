@@ -9,11 +9,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-interface AppProps {
-  message: string;
-}
-
-const App = ({ message }: AppProps) => {
+const App = () => {
   const swiperContainerRef = useRef(null);
   const [slideNumber, setSlideNumber] = useState(0);
   const [fraction, setFraction] = useState(`1/${historicalDates.length}`);
