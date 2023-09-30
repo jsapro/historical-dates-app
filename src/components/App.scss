@@ -97,49 +97,48 @@
   height: 6px;
   border-radius: 50%;
   position: absolute;
-  transition: 0.5s transform;
-  // background-color: #42567A;
-  // border: 1px solid var(--Black-blue, #42567A);
+  transition: 0.3s transform;
+  border: 1px solid #42567A;
+  background-color: #42567A;
+}
+
+.point_active {
+  transform: scale(7);
+  background-color: transparent;
 }
 
 .point:hover {
-  transform: scale(4);
+  transform: scale(7);
 }
 
 .point_1 {
   top: 29px;
   right: 130px;
-  border: 3px solid rgb(255, 115, 0);
 }
 
 .point_2 {
   top: 29px;
   left: 130px;
-  border: 3px solid red;
 }
 
 .point_3 {
   bottom: 28px;
   right: 130px;
-  border: 3px solid rgb(255, 187, 0);
 }
 
 .point_4 {
   bottom: 28px;
   left: 130px;
-  border: 3px solid rgb(0, 255, 0);
 }
 
 .point_5 {
   top: 50%;
   left: -6px;
-  border: 3px solid rgb(0, 47, 255);
 }
 
 .point_6 {
   top: 50%;
   right: -6px;
-  border: 3px solid rgb(212, 0, 255);
 }
 
 .info {
@@ -185,10 +184,10 @@
 
 .span_1 {
   color: var(--iris-100, #5d5fef);
-  padding-left: 260px;
+  padding-left: 230px;
 }
 
 .span_2 {
   color: var(--fuschia-100, #ef5da8);
-  padding-left: 144px;
+  padding-left: 80px;
 }
