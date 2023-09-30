@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperRef, SwiperSlide, useSwiper } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import InnerSwiper from './InnerSwiper/InnerSwiper';
@@ -13,19 +13,31 @@ const App = () => {
   const swiperContainerRef = useRef(null);
   const [slideNumber, setSlideNumber] = useState(0);
   const [fraction, setFraction] = useState(`1/${historicalDates.length}`);
+  const [isMobileMode, setIsMobileMode] = useState(window.innerWidth <= 320);
+  const [width, setWidth] = useState(window.innerWidth);
+
+  const onResize = () => {
+    setIsMobileMode(window.innerWidth <= 320);
+    setWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    setTimeout(() => {
+      window.addEventListener('resize', onResize);
+    }, 500);
+    return () => {
+      window.removeEventListener('resize', onResize);
+    };
+  }, [width]);
 
   const swiperRef = useRef<SwiperRef>(null);
 
   const swiper = useSwiper();
 
-  console.log('(slideNumber + 1):', slideNumber + 1);
-
   const handleSlideChange = () => {
     if (swiperRef.current) {
       const activeIndex = swiperRef.current.swiper.activeIndex;
-      console.log('Active Slide Index in App:', activeIndex);
       setSlideNumber(() => activeIndex);
-      console.log('Slide Name:', historicalDates[activeIndex].name);
 
       const slideData = swiperRef.current.swiper.slides[activeIndex].textContent;
 
@@ -130,7 +142,7 @@ const App = () => {
       <span className="span span_1">{findYearInterval().minYear}</span>
       <span className="span span_2">{findYearInterval().maxYear}</span>
 
-      <SwiperNavButtons fraction={fraction}></SwiperNavButtons>
+      {!isMobileMode ? <SwiperNavButtons fraction={fraction}></SwiperNavButtons> : null}
 
       <Swiper
         // onSwiper={setSwiper}
@@ -152,6 +164,7 @@ const App = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+      {isMobileMode ? <SwiperNavButtons fraction={fraction}></SwiperNavButtons> : null}
     </div>
   );
 };

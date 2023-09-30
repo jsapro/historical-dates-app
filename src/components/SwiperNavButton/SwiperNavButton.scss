@@ -25,13 +25,36 @@
 
 .navigation__btn_type_left {
   background-image: url('../../assets/images/arrow-left.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .navigation__btn_type_right {
   background-image: url('../../assets/images/arrow-left.svg');
   transform: rotate(180deg);
   margin-left: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .swiper-button-disabled {
   opacity: 0.5;
+}
+
+@media all and (max-width: 320px) {
+  .navigation {
+    padding: 5px 0 13px 0;
+    background-color: transparent;
+  }
+
+  .navigation__btn {
+    width: 25px;
+    height: 25px;
+    margin-top: 10px;
+  }
+
+  .navigation__btn_type_right {
+    margin-left: 8px;
+  }
 }

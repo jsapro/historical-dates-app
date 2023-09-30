@@ -17,7 +17,6 @@ const InnerSwiper = ({ events }) => {
   const handleSlideChange = () => {
     if (swiperRef.current) {
       const activeIndex = swiperRef.current.swiper.activeIndex;
-      console.log('Active Slide Index in InnerSwiper:', activeIndex);
       setSlideNumber(activeIndex);
     }
   };
