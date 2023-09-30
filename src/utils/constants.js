@@ -1,3 +1,16 @@
+const generateLorem = () => {
+  const lorem =
+    'bibendum arcu vitae elementum curabitur vitae nunc sed velit dignissim sodales ut eu sem integer vitae justo eget magna fermentum iaculis eu non diam phasellus';
+  const loremArray = lorem.split(' ');
+  let finalLorem = '';
+  const randomLoremLength = Math.floor(Math.random() * 16) + 10;
+  for (let i = 0; i < randomLoremLength; i++) {
+    const randomNumber = Math.floor(Math.random() * 25);
+    finalLorem = finalLorem + loremArray[randomNumber] + ' ';
+  }
+  return finalLorem;
+};
+
 const historicalDates = [
   {
     id: 1,
@@ -6,32 +19,32 @@ const historicalDates = [
       {
         id: 1,
         year: 2001,
-        description: 'Наука-1  13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
       {
         id: 2,
         year: 2016,
-        description: 'Наука-2  13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
       {
         id: 3,
         year: 2017,
-        description: 'Наука-3  13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
       {
         id: 4,
         year: 2018,
-        description: 'Наука-4  13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
       {
         id: 5,
         year: 2019,
-        description: 'Наука-5  13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
       {
         id: 6,
         year: 2021,
-        description: 'Наука-6  13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
     ],
   },
@@ -42,32 +55,32 @@ const historicalDates = [
       {
         id: 1,
         year: 2002,
-        description: 'Литература-1  13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
       {
         id: 2,
         year: 2016,
-        description: 'Литература-2  13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
       {
         id: 3,
         year: 2017,
-        description: 'Литература-3  13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
       {
         id: 4,
         year: 2018,
-        description: 'Литература-4  13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
       {
         id: 5,
         year: 2019,
-        description: 'Литература-5  13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
       {
         id: 6,
         year: 2022,
-        description: 'Литература-6  13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
     ],
   },
@@ -78,32 +91,32 @@ const historicalDates = [
       {
         id: 1,
         year: 2003,
-        description: '13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
       {
         id: 2,
         year: 2016,
-        description: '13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
       {
         id: 3,
         year: 2017,
-        description: '13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
       {
         id: 4,
         year: 2018,
-        description: '13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
       {
         id: 5,
         year: 2019,
-        description: '13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
       {
         id: 6,
         year: 2023,
-        description: '13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
     ],
   },
@@ -114,32 +127,32 @@ const historicalDates = [
       {
         id: 1,
         year: 2004,
-        description: '13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
       {
         id: 2,
         year: 2016,
-        description: '13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
       {
         id: 3,
         year: 2017,
-        description: '13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
       {
         id: 4,
         year: 2018,
-        description: '13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
       {
         id: 5,
         year: 2019,
-        description: '13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
       {
         id: 6,
         year: 2024,
-        description: '13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
     ],
   },
@@ -150,32 +163,32 @@ const historicalDates = [
       {
         id: 1,
         year: 2005,
-        description: '13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
       {
         id: 2,
         year: 2016,
-        description: '13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
       {
         id: 3,
         year: 2017,
-        description: '13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
       {
         id: 4,
         year: 2018,
-        description: '13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
       {
         id: 5,
         year: 2019,
-        description: '13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
       {
         id: 6,
         year: 2025,
-        description: '13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
     ],
   },
@@ -186,32 +199,32 @@ const historicalDates = [
       {
         id: 1,
         year: 2006,
-        description: 'Искусство-1  13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
       {
         id: 2,
         year: 2016,
-        description: 'Искусство-2  13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
       {
         id: 3,
         year: 2017,
-        description: 'Искусство-3  13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
       {
         id: 4,
         year: 2018,
-        description: 'Искусство-4  13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
       {
         id: 5,
         year: 2019,
-        description: 'Искусство-5  13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
       {
         id: 6,
         year: 2026,
-        description: 'Искусство-6  13 сентября - частое солнечное затмение...',
+        description: generateLorem(),
       },
     ],
   },

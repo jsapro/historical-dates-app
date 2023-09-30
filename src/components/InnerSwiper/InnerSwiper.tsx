@@ -27,7 +27,7 @@ const InnerSwiper = ({ events }) => {
       <Swiper
         onSlideChange={handleSlideChange}
         slidesPerView={3}
-        spaceBetween={40}
+        spaceBetween={70}
         grabCursor={true}
         ref={swiperRef}
         navigation={true}
