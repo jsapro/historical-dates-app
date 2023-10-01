@@ -11,6 +11,8 @@ const generateLorem = () => {
   return finalLorem;
 };
 
+const maxMobileScreenSize = 480;
+
 const historicalDates = [
   {
     id: 1,
@@ -230,4 +232,4 @@ const historicalDates = [
   },
 ];
 
-export { historicalDates };
+export { historicalDates, maxMobileScreenSize };

@@ -4,7 +4,7 @@ import { Navigation, Pagination } from 'swiper/modules';
 import InnerSwiper from './InnerSwiper';
 import SwiperNavButtons from './SwiperNavButton';
 import Circle from './Circle';
-import { historicalDates } from '../utils/constants';
+import { historicalDates, maxMobileScreenSize } from '../utils/constants';
 import './App.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -14,11 +14,13 @@ const App = () => {
   const swiperContainerRef = useRef(null);
   const [slideNumber, setSlideNumber] = useState(0);
   const [fraction, setFraction] = useState(`1/${historicalDates.length}`);
-  const [isMobileMode, setIsMobileMode] = useState(window.innerWidth <= 480);
+  const [isMobileMode, setIsMobileMode] = useState(
+    window.innerWidth <= maxMobileScreenSize
+  );
   const [width, setWidth] = useState(window.innerWidth);
 
   const onResize = () => {
-    setIsMobileMode(window.innerWidth <= 480);
+    setIsMobileMode(window.innerWidth <= maxMobileScreenSize);
     setWidth(window.innerWidth);
   };
 
@@ -87,7 +89,7 @@ const App = () => {
       <span className="span span_1">{findYearInterval().minYear}</span>
       <span className="span span_2">{findYearInterval().maxYear}</span>
 
-      {!isMobileMode ? <SwiperNavButtons fraction={fraction}></SwiperNavButtons> : null}
+      {!isMobileMode && <SwiperNavButtons fraction={fraction} />}
 
       <Swiper
         onSlideChange={handleSlideChange}
@@ -101,14 +103,11 @@ const App = () => {
       >
         {historicalDates.map((date, index) => (
           <SwiperSlide key={date.id} className="swiper-slide">
-            <InnerSwiper
-              slidesPerView={isMobileMode ? 1 : 3}
-              events={date.events}
-            ></InnerSwiper>
+            <InnerSwiper slidesPerView={isMobileMode ? 1 : 3} events={date.events} />
           </SwiperSlide>
         ))}
       </Swiper>
-      {isMobileMode ? <SwiperNavButtons fraction={fraction}></SwiperNavButtons> : null}
+      {isMobileMode && <SwiperNavButtons fraction={fraction} />}
     </div>
   );
 };
