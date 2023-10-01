@@ -1,41 +1,36 @@
+@import '../../vendor/variables';
+
 .navigation {
   padding: 145px 0 50px 80px;
   background-color: transparent;
-}
 
-.navigation__info {
-  color: #42567a;
-  font-family: 'PT Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: normal;
-  margin: 0;
-}
+  &__info {
+    color: #42567a;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+  }
 
-.navigation__btn {
-  width: 50px;
-  height: 50px;
-  flex-shrink: 0;
-  background-color: transparent;
-  border: none;
-  margin-top: 20px;
-  z-index: 10;
-  position: relative;
-}
+  &__btn {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    background-color: $transparent;
+    border: none;
+    margin-top: 20px;
+    z-index: 10;
+    position: relative;
+    background-image: url('../../assets/images/arrow-left.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 
-.navigation__btn_type_left {
-  background-image: url('../../assets/images/arrow-left.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.navigation__btn_type_right {
-  background-image: url('../../assets/images/arrow-left.svg');
-  transform: rotate(180deg);
-  margin-left: 20px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+    &_type_right {
+      transform: rotate(180deg);
+      margin-left: 20px;
+    }
+  }
 }
 
 .swiper-button-disabled {
@@ -45,16 +40,16 @@
 @media all and (max-width: 320px) {
   .navigation {
     padding: 5px 0 13px 0;
-    background-color: transparent;
-  }
+    background-color: $transparent;
 
-  .navigation__btn {
-    width: 25px;
-    height: 25px;
-    margin-top: 10px;
-  }
+    &__btn {
+      width: 25px;
+      height: 25px;
+      margin-top: 10px;
+    }
 
-  .navigation__btn_type_right {
-    margin-left: 8px;
+    &_type_right {
+      margin-left: 8px;
+    }
   }
 }

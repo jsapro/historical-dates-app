@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperRef, SwiperSlide, useSwiper } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
-import InnerSwiper from './InnerSwiper/InnerSwiper';
-import SwiperNavButtons from './SwiperNavButton/SwiperNavButton';
-import Circle from './Circle/Circle';
-import { historicalDates } from '../utils/constants.js';
+import InnerSwiper from './InnerSwiper';
+import SwiperNavButtons from './SwiperNavButton';
+import Circle from './Circle';
+import { historicalDates } from '../utils/constants';
 import './App.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -39,12 +39,7 @@ const App = () => {
     if (swiperRef.current) {
       const activeIndex = swiperRef.current.swiper.activeIndex;
       setSlideNumber(() => activeIndex);
-
-      const slideData = swiperRef.current.swiper.slides[activeIndex].textContent;
-
       setFraction(`${activeIndex + 1}/${historicalDates.length}`);
-
-      const swiperInstance = swiperRef.current.swiper;
       handleCircleClick(activeIndex);
     }
   };
@@ -54,10 +49,6 @@ const App = () => {
       swiper.slidePrev();
     }
   };
-
-  // const setSwiper = (swiper) => {
-  //   console.log('Swiper Instance:', swiper);
-  // };
 
   const wrapperRef = useRef(null);
 
@@ -125,12 +116,8 @@ const App = () => {
       {!isMobileMode ? <SwiperNavButtons fraction={fraction}></SwiperNavButtons> : null}
 
       <Swiper
-        // onSwiper={setSwiper}
         onSlideChange={handleSlideChange}
         ref={swiperRef}
-        // pagination={{
-        //   type: 'fraction',
-        // }}
         navigation={{
           nextEl: '.review-swiper-button-next',
           prevEl: '.review-swiper-button-prev',
@@ -139,7 +126,7 @@ const App = () => {
         className="outer-swiper"
       >
         {historicalDates.map((date, index) => (
-          <SwiperSlide key={date.id ? date.id : index} className="swiper-slide">
+          <SwiperSlide key={date.id} className="swiper-slide">
             <InnerSwiper
               slidesPerView={isMobileMode ? 1 : 3}
               events={date.events}

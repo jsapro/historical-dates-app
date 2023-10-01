@@ -1,11 +1,8 @@
-@import url('./vendor/fonts/fonts.scss');
-@import url('./vendor/normalize.scss');
-
-$main-color: rgb(244, 245, 249);
+@import url('./vendor/fonts.scss');
+@import './vendor/variables.scss';
 
 body {
-  background-color: $main-color;
+  background-color: $primary-color;
   margin: 0;
-  // max-height: 100vh;
-  // overflow: hidden;
+  font-family: 'PT Sans', sans-serif;
 }

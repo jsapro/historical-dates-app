@@ -3,8 +3,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('./PTSans-Regular.woff2') format('woff2'),
-    url('./PTSans-Regular.woff') format('woff');
+  src: url('./fonts/PTSans-Regular.woff2') format('woff2'),
 }
 
 @font-face {
@@ -12,8 +11,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('./PTSans-Bold.woff2') format('woff2'),
-    url('./PTSans-Bold.woff') format('woff');
+  src: url('./fonts/PTSans-Bold.woff2') format('woff2'),
 }
 
 @font-face {
@@ -21,6 +19,5 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('./BebasNeue-Regular.woff2') format('woff2'),
-    url('./BebasNeue-Regular.woff') format('woff');
+  src: url('./fonts/BebasNeue-Regular.woff2') format('woff2'),
 }
