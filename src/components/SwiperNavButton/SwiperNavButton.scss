@@ -37,19 +37,19 @@
   opacity: 0.5;
 }
 
-@media all and (max-width: 320px) {
+@media all and (max-width: 768px) {
   .navigation {
-    padding: 5px 0 13px 0;
+    padding: 46px 0 13px 0;
     background-color: $transparent;
 
     &__btn {
       width: 25px;
       height: 25px;
       margin-top: 10px;
-    }
 
-    &_type_right {
-      margin-left: 8px;
+      &_type_right {
+        margin-left: 8px;
+      }
     }
   }
 }

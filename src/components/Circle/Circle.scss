@@ -12,7 +12,7 @@
   border-bottom: none;
   border-top: none;
 
-  @media all and (max-width: 320px) {
+  @media all and (max-width: 768px) {
     display: none;
   }
 }
@@ -60,10 +60,10 @@
     transform: scale(7);
     background-color: $transparent;
   }
-}
 
-.point:hover {
-  transform: scale(7);
+  &:hover {
+    transform: scale(7);
+  }
 }
 
 .point_1 {

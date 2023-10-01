@@ -14,11 +14,11 @@ const App = () => {
   const swiperContainerRef = useRef(null);
   const [slideNumber, setSlideNumber] = useState(0);
   const [fraction, setFraction] = useState(`1/${historicalDates.length}`);
-  const [isMobileMode, setIsMobileMode] = useState(window.innerWidth <= 320);
+  const [isMobileMode, setIsMobileMode] = useState(window.innerWidth <= 480);
   const [width, setWidth] = useState(window.innerWidth);
 
   const onResize = () => {
-    setIsMobileMode(window.innerWidth <= 320);
+    setIsMobileMode(window.innerWidth <= 480);
     setWidth(window.innerWidth);
   };
 

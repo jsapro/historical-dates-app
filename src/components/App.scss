@@ -8,7 +8,7 @@
   margin: auto;
   padding: 0 80px;
 
-  @media all and (max-width: 320px) {
+  @media all and (max-width: 768px) {
     padding: 0 20px;
   }
 }
@@ -32,7 +32,7 @@
   background-color: $transparent;
   margin-left: 80px;
 
-  @media all and (max-width: 320px) {
+  @media all and (max-width: 768px) {
     min-height: 100px;
     margin-left: 0;
   }
@@ -44,7 +44,7 @@
 
 .info {
   display: flex;
-  gap: 397px;
+  gap: clamp(0px, 27vw,397px);
   align-items: center;
   padding: 165px 0 90px 0;
 
@@ -69,9 +69,9 @@
     line-height: 30px;
   }
 
-  @media all and (max-width: 320px) {
+  @media all and (max-width: 768px) {
     display: block;
-    padding: 60px 0 56px 0;
+    padding: 58px 0 54px 0;
 
     &__event-type {
       display: none;
@@ -79,7 +79,7 @@
 
     &__title {
       border-left: none;
-
+      width: 130px;
       font-size: 20px;
       padding: 0 0 0 0;
     }
@@ -88,13 +88,13 @@
 
 .span {
   text-align: center;
-  font-size: 200px;
+  font-size: clamp(56px, 12vw, 200px);
   font-style: normal;
   font-weight: 700;
   line-height: 160px;
   letter-spacing: -4px;
 
-  @media all and (max-width: 320px) {
+  @media all and (max-width: 768px) {
     display: inline-block;
     font-size: 56px;
     line-height: normal;
@@ -107,7 +107,7 @@
   color: $iris-100;
   padding-left: 218px;
 
-  @media all and (max-width: 320px) {
+  @media all and (max-width: 768px) {
     padding: 0 0 60px 0;
   }
 }
@@ -116,7 +116,7 @@
   color: $fuschia-100;
   padding-left: 93px;
 
-  @media all and (max-width: 320px) {
-    padding: 0 0 60px 20px;
+  @media all and (max-width: 768px) {
+    padding: 0 0 60px 26px;
   }
 }
