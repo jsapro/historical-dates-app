@@ -33,20 +33,12 @@ const App = () => {
 
   const swiperRef = useRef<SwiperRef>(null);
 
-  const swiper = useSwiper();
-
   const handleSlideChange = () => {
     if (swiperRef.current) {
       const activeIndex = swiperRef.current.swiper.activeIndex;
       setSlideNumber(() => activeIndex);
       setFraction(`${activeIndex + 1}/${historicalDates.length}`);
       handleCircleClick(activeIndex);
-    }
-  };
-
-  const handleSlidePrev = () => {
-    if (swiper) {
-      swiper.slidePrev();
     }
   };
 
@@ -60,26 +52,8 @@ const App = () => {
       }
     };
 
-    switch (number) {
-      case 0:
-        rotate(0);
-        break;
-      case 1:
-        rotate(58);
-        break;
-      case 2:
-        rotate(-122);
-        break;
-      case 3:
-        rotate(180);
-        break;
-      case 4:
-        rotate(120);
-        break;
-      case 5:
-        rotate(-62);
-        break;
-    }
+    const rotations = [0, 58, -122, 180, 120, -62];
+    rotate(rotations[number]);
 
     if (swiperRef.current) {
       const swiperInstance = swiperRef.current.swiper;
