@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperRef, SwiperSlide, useSwiper } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import InnerSwiper from './InnerSwiper/InnerSwiper';
-import { SwiperNavButtons } from './SwiperNavButton/SwiperNavButton';
+import SwiperNavButtons from './SwiperNavButton/SwiperNavButton';
+import Circle from './Circle/Circle';
 import { historicalDates } from '../utils/constants.js';
 import './App.scss';
 import 'swiper/css';
@@ -107,34 +108,13 @@ const App = () => {
 
   return (
     <div ref={swiperContainerRef} className="container">
-      <div className="circle">
-        <div ref={wrapperRef} className="wrapper">
-          <div
-            onClick={() => handleCircleClick(0)}
-            className={`${slideNumber === 0 ? `point_active` : ''} point point_1`}
-          ></div>
-          <div
-            onClick={() => handleCircleClick(1)}
-            className={`${slideNumber === 1 ? `point_active` : ''} point point_2`}
-          ></div>
-          <div
-            onClick={() => handleCircleClick(2)}
-            className={`${slideNumber === 2 ? `point_active` : ''} point point_3`}
-          ></div>
-          <div
-            onClick={() => handleCircleClick(3)}
-            className={`${slideNumber === 3 ? `point_active` : ''} point point_4`}
-          ></div>
-          <div
-            onClick={() => handleCircleClick(4)}
-            className={`${slideNumber === 4 ? `point_active` : ''} point point_5`}
-          ></div>
-          <div
-            onClick={() => handleCircleClick(5)}
-            className={`${slideNumber === 5 ? `point_active` : ''} point point_6`}
-          ></div>
-        </div>
-      </div>
+      <Circle
+        handleCircleClick={handleCircleClick}
+        slideNumber={slideNumber}
+        swiperRef={swiperRef ? swiperRef : null}
+        wrapperRef={wrapperRef ? wrapperRef : null}
+      />
+
       <div className="info">
         <h1 className="info__title">Исторические даты</h1>
         <p className="info__event-type">{historicalDates[slideNumber].name}</p>

@@ -2,7 +2,7 @@ import React from 'react';
 import { useSwiper } from 'swiper/react';
 import './SwiperNavButton.scss';
 
-export const SwiperNavButtons = ({ fraction }) => {
+const SwiperNavButtons = ({ fraction }) => {
   const swiper = useSwiper();
 
   return (
@@ -15,3 +15,5 @@ export const SwiperNavButtons = ({ fraction }) => {
     </>
   );
 };
+
+export default SwiperNavButtons;
