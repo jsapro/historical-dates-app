@@ -1,12 +1,18 @@
-import React, { useRef, useState } from 'react';
-import SwiperCore, { Navigation, Pagination } from 'swiper/modules';
+import { useRef } from 'react';
+import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
+import { type HistoricalEvent } from '../../utils/constants';
 import './InnerSwiper.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-const InnerSwiper = ({ events, slidesPerView }) => {
+interface InnerSwiperProps {
+  events: HistoricalEvent[];
+  slidesPerView: number;
+}
+
+const InnerSwiper = ({ events, slidesPerView }: InnerSwiperProps) => {
   const swiperRef = useRef<SwiperRef>(null);
 
   return (
@@ -19,7 +25,7 @@ const InnerSwiper = ({ events, slidesPerView }) => {
       pagination
       modules={[Navigation]}
     >
-      {events.map((event, index) => (
+      {events.map((event) => (
         <SwiperSlide className="swiper-slide" key={event.id}>
           <p className="swiper-slide__year">{event.year}</p>
           <p className="swiper-slide__description">{event.description}</p>

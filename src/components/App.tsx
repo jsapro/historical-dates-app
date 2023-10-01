@@ -46,8 +46,8 @@ const App = () => {
 
   const wrapperRef = useRef(null);
 
-  const handleCircleClick = (number) => {
-    const rotate = (deg) => {
+  const handleCircleClick = (number: number) => {
+    const rotate = (deg: number) => {
       if (wrapperRef.current) {
         (wrapperRef.current as HTMLElement).style.transition = '1s transform';
         (wrapperRef.current as HTMLElement).style.transform = `rotate(${deg}deg)`;
@@ -78,7 +78,6 @@ const App = () => {
       <Circle
         handleCircleClick={handleCircleClick}
         slideNumber={slideNumber}
-        swiperRef={swiperRef ? swiperRef : null}
         wrapperRef={wrapperRef ? wrapperRef : null}
       />
 
@@ -101,7 +100,7 @@ const App = () => {
         modules={[Pagination, Navigation]}
         className="outer-swiper"
       >
-        {historicalDates.map((date, index) => (
+        {historicalDates.map((date) => (
           <SwiperSlide key={date.id} className="swiper-slide">
             <InnerSwiper slidesPerView={isMobileMode ? 1 : 3} events={date.events} />
           </SwiperSlide>

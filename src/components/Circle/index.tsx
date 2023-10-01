@@ -1,7 +1,13 @@
 import { useRef } from 'react';
 import './Circle.scss';
 
-const Circle = ({ slideNumber, swiperRef, handleCircleClick, wrapperRef }: any) => {
+interface CircleProps {
+  slideNumber: number;
+  handleCircleClick: (number: number) => void;
+  wrapperRef: React.MutableRefObject<null> | null;
+}
+
+const Circle = ({ slideNumber, handleCircleClick, wrapperRef }: CircleProps) => {
   return (
     <div className="circle">
       <div ref={wrapperRef} className="wrapper">
