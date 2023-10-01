@@ -160,7 +160,10 @@ const App = () => {
       >
         {historicalDates.map((date, index) => (
           <SwiperSlide key={date.id ? date.id : index} className="swiper-slide">
-            <InnerSwiper events={date.events}></InnerSwiper>
+            <InnerSwiper
+              slidesPerView={isMobileMode ? 1 : 3}
+              events={date.events}
+            ></InnerSwiper>
           </SwiperSlide>
         ))}
       </Swiper>

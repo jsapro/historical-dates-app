@@ -10,7 +10,7 @@ import 'swiper/css/pagination';
 
 // SwiperCore.use([Navigation, Pagination]);
 
-const InnerSwiper = ({ events }) => {
+const InnerSwiper = ({ events, slidesPerView }) => {
   const swiperRef = useRef<SwiperRef>(null);
   const [slideNumber, setSlideNumber] = useState(1);
 
@@ -25,7 +25,7 @@ const InnerSwiper = ({ events }) => {
     <>
       <Swiper
         onSlideChange={handleSlideChange}
-        slidesPerView={3}
+        slidesPerView={slidesPerView}
         spaceBetween={70}
         grabCursor={true}
         ref={swiperRef}
