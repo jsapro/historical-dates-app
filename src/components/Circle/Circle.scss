@@ -55,6 +55,7 @@
   transition: 0.3s transform;
   border: 1px solid $black-blue;
   background-color: $black-blue;
+  cursor: pointer;
 
   &_active {
     transform: scale(7);
