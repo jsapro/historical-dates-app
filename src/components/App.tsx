@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Swiper, SwiperRef, SwiperSlide, useSwiper } from 'swiper/react';
+import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import InnerSwiper from './InnerSwiper';
 import SwiperNavButtons from './SwiperNavButton';
