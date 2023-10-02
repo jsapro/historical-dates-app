@@ -11,39 +11,61 @@ const generateLorem = () => {
   return finalLorem;
 };
 
-const historicalDates = [
+const generateRandomYear = () => {
+  const minYear = 1981;
+  const maxYear = 2023;
+  const randomYear = Math.floor(Math.random() * (maxYear - minYear + 1)) + minYear;
+  return randomYear;
+};
+generateRandomYear();
+
+const maxMobileScreenSize = 480;
+
+interface HistoricalEvent {
+  id: number;
+  year: number;
+  description: string;
+}
+
+interface HistoricalCategory {
+  id: number;
+  name: string;
+  events: HistoricalEvent[];
+}
+
+const historicalDates: HistoricalCategory[] = [
   {
     id: 1,
     name: 'Наука',
     events: [
       {
         id: 1,
-        year: 2001,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
       {
         id: 2,
-        year: 2016,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
       {
         id: 3,
-        year: 2017,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
       {
         id: 4,
-        year: 2018,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
       {
         id: 5,
-        year: 2019,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
       {
         id: 6,
-        year: 2021,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
     ],
@@ -54,32 +76,32 @@ const historicalDates = [
     events: [
       {
         id: 1,
-        year: 2002,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
       {
         id: 2,
-        year: 2016,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
       {
         id: 3,
-        year: 2017,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
       {
         id: 4,
-        year: 2018,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
       {
         id: 5,
-        year: 2019,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
       {
         id: 6,
-        year: 2022,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
     ],
@@ -90,32 +112,32 @@ const historicalDates = [
     events: [
       {
         id: 1,
-        year: 2003,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
       {
         id: 2,
-        year: 2016,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
       {
         id: 3,
-        year: 2017,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
       {
         id: 4,
-        year: 2018,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
       {
         id: 5,
-        year: 2019,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
       {
         id: 6,
-        year: 2023,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
     ],
@@ -126,32 +148,32 @@ const historicalDates = [
     events: [
       {
         id: 1,
-        year: 2004,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
       {
         id: 2,
-        year: 2016,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
       {
         id: 3,
-        year: 2017,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
       {
         id: 4,
-        year: 2018,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
       {
         id: 5,
-        year: 2019,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
       {
         id: 6,
-        year: 2024,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
     ],
@@ -162,32 +184,32 @@ const historicalDates = [
     events: [
       {
         id: 1,
-        year: 2005,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
       {
         id: 2,
-        year: 2016,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
       {
         id: 3,
-        year: 2017,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
       {
         id: 4,
-        year: 2018,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
       {
         id: 5,
-        year: 2019,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
       {
         id: 6,
-        year: 2025,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
     ],
@@ -198,36 +220,36 @@ const historicalDates = [
     events: [
       {
         id: 1,
-        year: 2006,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
       {
         id: 2,
-        year: 2016,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
       {
         id: 3,
-        year: 2017,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
       {
         id: 4,
-        year: 2018,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
       {
         id: 5,
-        year: 2019,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
       {
         id: 6,
-        year: 2026,
+        year: generateRandomYear(),
         description: generateLorem(),
       },
     ],
   },
 ];
 
-export { historicalDates };
+export { historicalDates, maxMobileScreenSize, HistoricalEvent };

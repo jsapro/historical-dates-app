@@ -1,0 +1,97 @@
+@import '../../vendor/variables';
+
+.circle {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  position: absolute;
+  border: 1px solid $black-blue-dimmed;
+  border-bottom: none;
+  border-top: none;
+
+  @media all and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.circle::after {
+  content: '';
+  display: block;
+  height: 110vh;
+  position: absolute;
+  top: -94px;
+  left: 50%;
+  border: 1px solid $black-blue-dimmed;
+}
+
+.circle::before {
+  content: '';
+  display: block;
+  height: 1442px;
+  position: absolute;
+  top: -241px;
+  left: 50%;
+  transform: rotate(90deg);
+  border: 1px solid $black-blue-dimmed;
+}
+
+.wrapper {
+  width: 530px;
+  height: 530px;
+  border-radius: 50%;
+  position: relative;
+  margin-bottom: 190px;
+  border: 1px solid $black-blue-dimmed;
+}
+
+.point {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 0.3s transform;
+  border: 1px solid $black-blue;
+  background-color: $black-blue;
+
+  &_active {
+    transform: scale(7);
+    background-color: $transparent;
+  }
+
+  &:hover {
+    transform: scale(7);
+  }
+}
+
+.point_1 {
+  top: 29px;
+  right: 130px;
+}
+
+.point_2 {
+  top: 29px;
+  left: 130px;
+}
+
+.point_3 {
+  bottom: 28px;
+  right: 130px;
+}
+
+.point_4 {
+  bottom: 28px;
+  left: 130px;
+}
+
+.point_5 {
+  top: 50%;
+  left: -6px;
+}
+
+.point_6 {
+  top: 50%;
+  right: -6px;
+}
