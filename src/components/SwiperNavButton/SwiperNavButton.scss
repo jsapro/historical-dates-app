@@ -1,4 +1,4 @@
-@import '../../vendor/variables';
+@import '@cssVariables';
 
 .navigation {
   padding: 145px 0 50px 80px;
@@ -21,7 +21,7 @@
     margin-top: 20px;
     z-index: 10;
     position: relative;
-    background-image: url('../../assets/images/arrow-left.svg');
+    background-image: url(@arrowLeft);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

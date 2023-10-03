@@ -1,4 +1,4 @@
-@import '../../vendor/variables';
+@import '@cssVariables';
 
 .swiper-slide {
   flex-direction: column;
@@ -35,7 +35,7 @@
 }
 
 .swiper-button-next {
-  background-image: url('../../assets/images/arrow-left.svg');
+  background-image: url(@arrowLeft);
   transform: rotate(180deg);
   background-repeat: no-repeat;
   background-size: 100% auto;
@@ -47,7 +47,7 @@
 }
 
 .swiper-button-prev {
-  background-image: url('../../assets/images/arrow-left.svg');
+  background-image: url(@arrowLeft);
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center;
