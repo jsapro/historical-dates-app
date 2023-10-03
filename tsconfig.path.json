@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@constants": ["./src/utils/constants.ts"],
+      "@arrowLeft": ["./src/assets/images/arrow-left.svg"],
+      "@cssVariables": ["./src/vendor/variables.scss"],
+    },
+  }
+}

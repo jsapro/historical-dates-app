@@ -1,4 +1,5 @@
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = {
   plugins: [
@@ -42,5 +43,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js'],
+    alias: {
+      '@constants': path.resolve(__dirname, './src/utils/constants.ts'),
+      '@arrowLeft': path.resolve(__dirname, './src/assets/images/arrow-left.svg'),
+      '@cssVariables': path.resolve(__dirname, './src/vendor/variables.scss'),
+    },
   },
 };

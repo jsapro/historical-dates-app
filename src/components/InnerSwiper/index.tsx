@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
-import { type HistoricalEvent } from '../../utils/constants';
+import { type HistoricalEvent } from '@constants';
 import './InnerSwiper.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';

@@ -6,5 +6,7 @@
     "esModuleInterop": true,
     "jsx": "react-jsx"
   },
-  "include": ["src"]
+
+  "include": ["src"],
+  "extends": "./tsconfig.path.json"
 }
